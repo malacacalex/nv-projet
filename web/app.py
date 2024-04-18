@@ -10,7 +10,7 @@ db = SQLAlchemy(app)
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    return render_template('/app/index.html')
 
 @app.route('/newuser', methods=['GET', 'POST'])
 def new_user():
@@ -21,7 +21,7 @@ def new_user():
         db.session.add(user)
         db.session.commit()
         return 'User registered successfully!'
-    return render_template('register.html', form=form)
+    return render_template('/app/register.html', form=form)
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0')
