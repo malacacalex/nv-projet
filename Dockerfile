@@ -9,5 +9,8 @@ RUN apt-get install -y zlib1g-dev libwebp-dev libpng-dev libzip-dev && \
 RUN a2enmod rewrite
 RUN service apache2 restart
 
+COPY styles.css /var/www/html/styles.css
+
+
 EXPOSE 80
 

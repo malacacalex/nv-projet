@@ -41,10 +41,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             header('Location: accueil.php');
             exit();
         } else {
-            echo "Utilisateur, adresse mail ou mot de passe incorrecte";
+            echo "Utilisateur, adresse mail ou mot de passe incorrect";
         }
     } else {
-        echo "Utilisateur, adresse mail ou mot de passe incorrecte";
+        echo "Utilisateur, adresse mail ou mot de passe incorrect";
     }
 
     mysqli_close($conn);
@@ -55,7 +55,64 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
     <meta charset="UTF-8">
     <title>Connection - SAE61</title>
-    <link rel="stylesheet" type="text/css" href="styles.css">
+    <style>
+        /* Styles CSS */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        form {
+            width: 300px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        .button {
+            display: block;
+            text-align: center;
+            margin-top: 10px;
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .button:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
     <h1>Page d'authentification pour la SAE61</h1>
